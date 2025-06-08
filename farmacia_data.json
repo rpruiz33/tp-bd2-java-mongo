@@ -1,0 +1,1044 @@
+{
+  "obrasSociales": [
+    {
+      "idObraSocial": 1,
+      "nombre": "OSDE"
+    },
+    {
+      "idObraSocial": 2,
+      "nombre": "Swiss Medical"
+    },
+    {
+      "idObraSocial": 3,
+      "nombre": "Galeno"
+    },
+    {
+      "idObraSocial": 4,
+      "nombre": "Medicus"
+    }
+  ],
+  "domicilios": [
+    {
+      "idDomicilio": 1,
+      "calle": "Calle 9 de Julio",
+      "numero": 2453,
+      "ciudad": "Almirante Brown",
+      "provincia": "Buenos Aires"
+    },
+    {
+      "idDomicilio": 2,
+      "calle": "Calle Rio Negro",
+      "numero": 3180,
+      "ciudad": "Lomas de Zamora",
+      "provincia": "Buenos Aires"
+    },
+    {
+      "idDomicilio": 3,
+      "calle": "Calle Sarmiento",
+      "numero": 2732,
+      "ciudad": "Retiro",
+      "provincia": "Ciudad Autónoma de Buenos Aires"
+    },
+    {
+      "idDomicilio": 4,
+      "calle": "Av Corrientes",
+      "numero": 1120,
+      "ciudad": "Belgrano",
+      "provincia": "Ciudad Autónoma de Buenos Aires"
+    }
+  ],
+  "sucursales": [
+    {
+      "idSucursal": 1,
+      "nombre": "Sucursal Central",
+      "domicilio": {
+        "idDomicilio": 1,
+        "calle": "Calle 9 de Julio",
+        "numero": 2453,
+        "ciudad": "Almirante Brown",
+        "provincia": "Buenos Aires"
+      },
+      "empleados": [
+        {
+          "idEmpleado": 1,
+          "apellido": "Maria",
+          "nombre": "Pérez",
+          "dni": "12.325.682",
+          "cuil": "20-12345-5",
+          "numeroAfiliado": "12834",
+          "obraSocial": {
+            "idObraSocial": 2,
+            "nombre": "Swiss Medical"
+          },
+          "domicilio": {
+            "idDomicilio": 2,
+            "calle": "Calle Rio Negro",
+            "numero": 3180,
+            "ciudad": "Lomas de Zamora",
+            "provincia": "Buenos Aires"
+          }
+        },
+        {
+          "idEmpleado": 3,
+          "apellido": "Juan",
+          "nombre": "Pérez",
+          "dni": "28.345.672",
+          "cuil": "20-28345672-5",
+          "numeroAfiliado": "58716",
+          "obraSocial": {
+            "idObraSocial": 2,
+            "nombre": "Swiss Medical"
+          },
+          "domicilio": {
+            "idDomicilio": 2,
+            "calle": "Calle Rio Negro",
+            "numero": 3180,
+            "ciudad": "Lomas de Zamora",
+            "provincia": "Buenos Aires"
+          }
+        },
+        {
+          "idEmpleado": 4,
+          "apellido": "María",
+          "nombre": "González",
+          "dni": "33.876.904",
+          "cuil": "27-33876904-3",
+          "numeroAfiliado": "48397",
+          "obraSocial": {
+            "idObraSocial": 3,
+            "nombre": "Galeno"
+          },
+          "domicilio": {
+            "idDomicilio": 3,
+            "calle": "Calle Sarmiento",
+            "numero": 2732,
+            "ciudad": "Retiro",
+            "provincia": "Ciudad Autónoma de Buenos Aires"
+          }
+        }
+      ],
+      "encargado": {
+        "idEmpleado": 1,
+        "apellido": "Maria",
+        "nombre": "Pérez",
+        "dni": "12.325.682",
+        "cuil": "20-12345-5",
+        "numeroAfiliado": "12834",
+        "obraSocial": {
+          "idObraSocial": 2,
+          "nombre": "Swiss Medical"
+        },
+        "domicilio": {
+          "idDomicilio": 2,
+          "calle": "Calle Rio Negro",
+          "numero": 3180,
+          "ciudad": "Lomas de Zamora",
+          "provincia": "Buenos Aires"
+        }
+      }
+    },
+    {
+      "idSucursal": 2,
+      "nombre": "Sucursal Norte",
+      "domicilio": {
+        "idDomicilio": 3,
+        "calle": "Calle Sarmiento",
+        "numero": 2732,
+        "ciudad": "Retiro",
+        "provincia": "Ciudad Autónoma de Buenos Aires"
+      },
+      "empleados": [
+        {
+          "idEmpleado": 2,
+          "apellido": "Ernesto",
+          "nombre": "Martinez",
+          "dni": "14.568.987",
+          "cuil": "20-54321-7",
+          "numeroAfiliado": "88746",
+          "obraSocial": {
+            "idObraSocial": 2,
+            "nombre": "Swiss Medical"
+          },
+          "domicilio": {
+            "idDomicilio": 2,
+            "calle": "Calle Rio Negro",
+            "numero": 3180,
+            "ciudad": "Lomas de Zamora",
+            "provincia": "Buenos Aires"
+          }
+        },
+        {
+          "idEmpleado": 5,
+          "apellido": "Pedro",
+          "nombre": "López",
+          "dni": "39.112.845",
+          "cuil": "20-39112845-9",
+          "numeroAfiliado": "78195",
+          "obraSocial": {
+            "idObraSocial": 1,
+            "nombre": "OSDE"
+          },
+          "domicilio": {
+            "idDomicilio": 4,
+            "calle": "Av Corrientes",
+            "numero": 1120,
+            "ciudad": "Belgrano",
+            "provincia": "Ciudad Autónoma de Buenos Aires"
+          }
+        },
+        {
+          "idEmpleado": 6,
+          "apellido": "Gustavo",
+          "nombre": "Gimenez",
+          "dni": "12.182.942",
+          "cuil": "20-39218865-3",
+          "numeroAfiliado": "12345",
+          "obraSocial": {
+            "idObraSocial": 1,
+            "nombre": "OSDE"
+          },
+          "domicilio": {
+            "idDomicilio": 5,
+            "calle": "Calle San Martín",
+            "numero": 1589,
+            "ciudad": "Lanus",
+            "provincia": "Buenos Aires"
+          }
+        }
+      ],
+      "encargado": {
+        "idEmpleado": 1,
+        "apellido": "Maria",
+        "nombre": "Pérez",
+        "dni": "12.325.682",
+        "cuil": "20-12345-5",
+        "numeroAfiliado": "12834",
+        "obraSocial": {
+          "idObraSocial": 2,
+          "nombre": "Swiss Medical"
+        },
+        "domicilio": {
+          "idDomicilio": 2,
+          "calle": "Calle Rio Negro",
+          "numero": 3180,
+          "ciudad": "Lomas de Zamora",
+          "provincia": "Buenos Aires"
+        }
+      }
+    }
+  ],
+  "empleados": [
+    {
+      "idEmpleado": 1,
+      "apellido": "Maria",
+      "nombre": "Pérez",
+      "dni": "12.325.682",
+      "cuil": "20-12345-5",
+      "numeroAfiliado": "12834",
+      "obraSocial": {
+        "idObraSocial": 2,
+        "nombre": "Swiss Medical"
+      },
+      "domicilio": {
+        "idDomicilio": 2,
+        "calle": "Calle Rio Negro",
+        "numero": 3180,
+        "ciudad": "Lomas de Zamora",
+        "provincia": "Buenos Aires"
+      }
+    },
+    {
+      "idEmpleado": 2,
+      "apellido": "Ernesto",
+      "nombre": "Martinez",
+      "dni": "14.568.987",
+      "cuil": "20-54321-7",
+      "numeroAfiliado": "88746",
+      "obraSocial": {
+        "idObraSocial": 2,
+        "nombre": "Swiss Medical"
+      },
+      "domicilio": {
+        "idDomicilio": 2,
+        "calle": "Calle Rio Negro",
+        "numero": 3180,
+        "ciudad": "Lomas de Zamora",
+        "provincia": "Buenos Aires"
+      }
+    },
+    {
+      "idEmpleado": 3,
+      "apellido": "Juan",
+      "nombre": "Pérez",
+      "dni": "28.345.672",
+      "cuil": "20-28345672-5",
+      "numeroAfiliado": "58716",
+      "obraSocial": {
+        "idObraSocial": 2,
+        "nombre": "Swiss Medical"
+      },
+      "domicilio": {
+        "idDomicilio": 2,
+        "calle": "Calle Rio Negro",
+        "numero": 3180,
+        "ciudad": "Lomas de Zamora",
+        "provincia": "Buenos Aires"
+      }
+    },
+    {
+      "idEmpleado": 4,
+      "apellido": "María",
+      "nombre": "González",
+      "dni": "33.876.904",
+      "cuil": "27-33876904-3",
+      "numeroAfiliado": "48397",
+      "obraSocial": {
+        "idObraSocial": 3,
+        "nombre": "Galeno"
+      },
+      "domicilio": {
+        "idDomicilio": 3,
+        "calle": "Calle Sarmiento",
+        "numero": 2732,
+        "ciudad": "Retiro",
+        "provincia": "Ciudad Autónoma de Buenos Aires"
+      }
+    },
+    {
+      "idEmpleado": 5,
+      "apellido": "Pedro",
+      "nombre": "López",
+      "dni": "39.112.845",
+      "cuil": "20-39112845-9",
+      "numeroAfiliado": "78195",
+      "obraSocial": {
+        "idObraSocial": 1,
+        "nombre": "OSDE"
+      },
+      "domicilio": {
+        "idDomicilio": 4,
+        "calle": "Av Corrientes",
+        "numero": 1120,
+        "ciudad": "Belgrano",
+        "provincia": "Ciudad Autónoma de Buenos Aires"
+      }
+    },
+    {
+      "idEmpleado": 6,
+      "apellido": "Gustavo",
+      "nombre": "Gimenez",
+      "dni": "12.182.942",
+      "cuil": "20-39218865-3",
+      "numeroAfiliado": "12345",
+      "obraSocial": {
+        "idObraSocial": 1,
+        "nombre": "OSDE"
+      },
+      "domicilio": {
+        "idDomicilio": 5,
+        "calle": "Calle San Martín",
+        "numero": 1589,
+        "ciudad": "Lanus",
+        "provincia": "Buenos Aires"
+      }
+    }
+  ],
+  "formasPago": [
+    {
+      "idFormaPago": 1,
+      "nombre": "Efectivo"
+    },
+    {
+      "idFormaPago": 2,
+      "nombre": "Tarjeta Crédito"
+    },
+    {
+      "idFormaPago": 3,
+      "nombre": "Tarjeta Débito"
+    }
+  ],
+  "clientes": [
+    {
+      "idCliente": 1,
+      "apellido": "Gómez",
+      "nombre": "Laura",
+      "dni": "",
+      "obraSocial": {
+        "idObraSocial": 1,
+        "nombre": "OSDE"
+      },
+      "domicilio": {
+        "idDomicilio": 1,
+        "calle": "Calle 9 de Julio",
+        "numero": 2453,
+        "ciudad": "Almirante Brown",
+        "provincia": "Buenos Aires"
+      }
+    },
+    {
+      "idCliente": 2,
+      "apellido": "Rodríguez",
+      "nombre": "Carlos",
+      "dni": "",
+      "obraSocial": {
+        "idObraSocial": 2,
+        "nombre": "Swiss Medical"
+      },
+      "domicilio": {
+        "idDomicilio": 2,
+        "calle": "Calle Rio Negro",
+        "numero": 3180,
+        "ciudad": "Lomas de Zamora",
+        "provincia": "Buenos Aires"
+      }
+    },
+    {
+      "idCliente": 3,
+      "apellido": "Martínez",
+      "nombre": "Ana",
+      "dni": "",
+      "obraSocial": {
+        "idObraSocial": 3,
+        "nombre": "Galeno"
+      },
+      "domicilio": {
+        "idDomicilio": 3,
+        "calle": "Calle Sarmiento",
+        "numero": 2732,
+        "ciudad": "Retiro",
+        "provincia": "Ciudad Autónoma de Buenos Aires"
+      }
+    },
+    {
+      "idCliente": 4,
+      "apellido": "Fernández",
+      "nombre": "Sofía",
+      "dni": "",
+      "obraSocial": {
+        "idObraSocial": 4,
+        "nombre": "Medicus"
+      },
+      "domicilio": {
+        "idDomicilio": 4,
+        "calle": "Av Corrientes",
+        "numero": 1120,
+        "ciudad": "Belgrano",
+        "provincia": "Ciudad Autónoma de Buenos Aires"
+      }
+    },
+    {
+      "idCliente": 5,
+      "apellido": "Suárez",
+      "nombre": "Miguel",
+      "dni": "",
+      "obraSocial": {
+        "idObraSocial": 2,
+        "nombre": "Swiss Medical"
+      },
+      "domicilio": {
+        "idDomicilio": 1,
+        "calle": "Calle 9 de Julio",
+        "numero": 2453,
+        "ciudad": "Almirante Brown",
+        "provincia": "Buenos Aires"
+      }
+    },
+    {
+      "idCliente": 6,
+      "apellido": "Vega",
+      "nombre": "Natalia",
+      "dni": "",
+      "obraSocial": {
+        "idObraSocial": 3,
+        "nombre": "Galeno"
+      },
+      "domicilio": {
+        "idDomicilio": 2,
+        "calle": "Calle Rio Negro",
+        "numero": 3180,
+        "ciudad": "Lomas de Zamora",
+        "provincia": "Buenos Aires"
+      }
+    },
+    {
+      "idCliente": 7,
+      "apellido": "Ramírez",
+      "nombre": "Diego",
+      "dni": "",
+      "obraSocial": {
+        "idObraSocial": 1,
+        "nombre": "OSDE"
+      },
+      "domicilio": {
+        "idDomicilio": 3,
+        "calle": "Calle Sarmiento",
+        "numero": 2732,
+        "ciudad": "Retiro",
+        "provincia": "Ciudad Autónoma de Buenos Aires"
+      }
+    },
+    {
+      "idCliente": 8,
+      "apellido": "Silva",
+      "nombre": "Valentina",
+      "dni": "",
+      "obraSocial": {
+        "idObraSocial": 4,
+        "nombre": "Medicus"
+      },
+      "domicilio": {
+        "idDomicilio": 4,
+        "calle": "Av Corrientes",
+        "numero": 1120,
+        "ciudad": "Belgrano",
+        "provincia": "Ciudad Autónoma de Buenos Aires"
+      }
+    },
+    {
+      "idCliente": 9,
+      "apellido": "Alonso",
+      "nombre": "Jorge",
+      "dni": "",
+      "obraSocial": {
+        "idObraSocial": 1,
+        "nombre": "OSDE"
+      },
+      "domicilio": {
+        "idDomicilio": 1,
+        "calle": "Calle 9 de Julio",
+        "numero": 2453,
+        "ciudad": "Almirante Brown",
+        "provincia": "Buenos Aires"
+      }
+    }
+  ],
+  "laboratorios": [
+    {
+      "idLaboratorio": 1,
+      "nombre": "Bayer",
+      "codigo": "BAY"
+    },
+    {
+      "idLaboratorio": 2,
+      "nombre": "Pfizer,",
+      "codigo": "PFZ"
+    },
+    {
+      "idLaboratorio": 3,
+      "nombre": "Astrazeneca",
+      "codigo": "AZN"
+    }
+  ],
+  "productos": [
+    {
+      "idProducto": 1,
+      "descripcion": "Paracetamol",
+      "precio": 500.0,
+      "codigo": "Prct250",
+      "laboratorio": {
+        "idLaboratorio": 1,
+        "nombre": "Bayer",
+        "codigo": "BAY"
+      },
+      "tipo": "Medicamento"
+    },
+    {
+      "idProducto": 2,
+      "descripcion": "Ibuprofeno",
+      "precio": 700.0,
+      "codigo": "Ibu500",
+      "laboratorio": {
+        "idLaboratorio": 2,
+        "nombre": "Pfizer,",
+        "codigo": "PFZ"
+      },
+      "tipo": "Medicamento"
+    },
+    {
+      "idProducto": 3,
+      "descripcion": "Amoxicilina",
+      "precio": 1500.0,
+      "codigo": "Amox750",
+      "laboratorio": {
+        "idLaboratorio": 3,
+        "nombre": "Astrazeneca",
+        "codigo": "AZN"
+      },
+      "tipo": "Medicamento"
+    },
+    {
+      "idProducto": 4,
+      "descripcion": "Nivea Men",
+      "precio": 400.0,
+      "codigo": "NvM01",
+      "laboratorio": {
+        "idLaboratorio": 1,
+        "nombre": "Bayer",
+        "codigo": "BAY"
+      },
+      "tipo": "Perfume"
+    },
+    {
+      "idProducto": 5,
+      "descripcion": "Rexona Antibacterial",
+      "precio": 900.0,
+      "codigo": "Rxn01",
+      "laboratorio": {
+        "idLaboratorio": 2,
+        "nombre": "Pfizer,",
+        "codigo": "PFZ"
+      },
+      "tipo": "Perfume"
+    }
+  ],
+  "ventas": [
+    {
+      "idVenta": 1,
+      "fecha": "2024-06-01",
+      "formaPago": {
+        "idFormaPago": 1,
+        "nombre": "Efectivo"
+      },
+      "numeroTicket": "0001-00000001",
+      "total": 6200.0,
+      "empleadoAtencion": {
+        "idEmpleado": 4,
+        "apellido": "María",
+        "nombre": "González",
+        "dni": "33.876.904",
+        "cuil": "27-33876904-3",
+        "numeroAfiliado": "48397",
+        "obraSocial": {
+          "idObraSocial": 3,
+          "nombre": "Galeno"
+        },
+        "domicilio": {
+          "idDomicilio": 3,
+          "calle": "Calle Sarmiento",
+          "numero": 2732,
+          "ciudad": "Retiro",
+          "provincia": "Ciudad Autónoma de Buenos Aires"
+        }
+      },
+      "empleadoCaja": {
+        "idEmpleado": 3,
+        "apellido": "Juan",
+        "nombre": "Pérez",
+        "dni": "28.345.672",
+        "cuil": "20-28345672-5",
+        "numeroAfiliado": "58716",
+        "obraSocial": {
+          "idObraSocial": 2,
+          "nombre": "Swiss Medical"
+        },
+        "domicilio": {
+          "idDomicilio": 2,
+          "calle": "Calle Rio Negro",
+          "numero": 3180,
+          "ciudad": "Lomas de Zamora",
+          "provincia": "Buenos Aires"
+        }
+      },
+      "cliente": {
+        "idCliente": 1,
+        "apellido": "Gómez",
+        "nombre": "Laura",
+        "dni": "",
+        "obraSocial": {
+          "idObraSocial": 1,
+          "nombre": "OSDE"
+        },
+        "domicilio": {
+          "idDomicilio": 1,
+          "calle": "Calle 9 de Julio",
+          "numero": 2453,
+          "ciudad": "Almirante Brown",
+          "provincia": "Buenos Aires"
+        }
+      },
+      "detalles": [
+        {
+          "idDetalleVenta": 1,
+          "producto": {
+            "idProducto": 1,
+            "descripcion": "Paracetamol",
+            "precio": 500.0,
+            "codigo": "Prct250",
+            "laboratorio": {
+              "idLaboratorio": 1,
+              "nombre": "Bayer",
+              "codigo": "BAY"
+            },
+            "tipo": "Medicamento"
+          },
+          "cantidad": 2,
+          "subtotal": 1000.0,
+          "precioUnitario": 500.0
+        },
+        {
+          "idDetalleVenta": 2,
+          "producto": {
+            "idProducto": 2,
+            "descripcion": "Ibuprofeno",
+            "precio": 700.0,
+            "codigo": "Ibu500",
+            "laboratorio": {
+              "idLaboratorio": 2,
+              "nombre": "Pfizer,",
+              "codigo": "PFZ"
+            },
+            "tipo": "Medicamento"
+          },
+          "cantidad": 1,
+          "subtotal": 700.0,
+          "precioUnitario": 700.0
+        },
+        {
+          "idDetalleVenta": 3,
+          "producto": {
+            "idProducto": 3,
+            "descripcion": "Amoxicilina",
+            "precio": 1500.0,
+            "codigo": "Amox750",
+            "laboratorio": {
+              "idLaboratorio": 3,
+              "nombre": "Astrazeneca",
+              "codigo": "AZN"
+            },
+            "tipo": "Medicamento"
+          },
+          "cantidad": 3,
+          "subtotal": 4500.0,
+          "precioUnitario": 1500.0
+        }
+      ]
+    },
+    {
+      "idVenta": 2,
+      "fecha": "2024-06-02",
+      "formaPago": {
+        "idFormaPago": 2,
+        "nombre": "Tarjeta Crédito"
+      },
+      "numeroTicket": "0001-000000002",
+      "total": 6900.0,
+      "empleadoAtencion": {
+        "idEmpleado": 4,
+        "apellido": "María",
+        "nombre": "González",
+        "dni": "33.876.904",
+        "cuil": "27-33876904-3",
+        "numeroAfiliado": "48397",
+        "obraSocial": {
+          "idObraSocial": 3,
+          "nombre": "Galeno"
+        },
+        "domicilio": {
+          "idDomicilio": 3,
+          "calle": "Calle Sarmiento",
+          "numero": 2732,
+          "ciudad": "Retiro",
+          "provincia": "Ciudad Autónoma de Buenos Aires"
+        }
+      },
+      "empleadoCaja": {
+        "idEmpleado": 3,
+        "apellido": "Juan",
+        "nombre": "Pérez",
+        "dni": "28.345.672",
+        "cuil": "20-28345672-5",
+        "numeroAfiliado": "58716",
+        "obraSocial": {
+          "idObraSocial": 2,
+          "nombre": "Swiss Medical"
+        },
+        "domicilio": {
+          "idDomicilio": 2,
+          "calle": "Calle Rio Negro",
+          "numero": 3180,
+          "ciudad": "Lomas de Zamora",
+          "provincia": "Buenos Aires"
+        }
+      },
+      "cliente": {
+        "idCliente": 2,
+        "apellido": "Rodríguez",
+        "nombre": "Carlos",
+        "dni": "",
+        "obraSocial": {
+          "idObraSocial": 2,
+          "nombre": "Swiss Medical"
+        },
+        "domicilio": {
+          "idDomicilio": 2,
+          "calle": "Calle Rio Negro",
+          "numero": 3180,
+          "ciudad": "Lomas de Zamora",
+          "provincia": "Buenos Aires"
+        }
+      },
+      "detalles": [
+        {
+          "idDetalleVenta": 4,
+          "producto": {
+            "idProducto": 4,
+            "descripcion": "Nivea Men",
+            "precio": 400.0,
+            "codigo": "NvM01",
+            "laboratorio": {
+              "idLaboratorio": 1,
+              "nombre": "Bayer",
+              "codigo": "BAY"
+            },
+            "tipo": "Perfume"
+          },
+          "cantidad": 2,
+          "subtotal": 800.0,
+          "precioUnitario": 400.0
+        },
+        {
+          "idDetalleVenta": 5,
+          "producto": {
+            "idProducto": 5,
+            "descripcion": "Rexona Antibacterial",
+            "precio": 900.0,
+            "codigo": "Rxn01",
+            "laboratorio": {
+              "idLaboratorio": 2,
+              "nombre": "Pfizer,",
+              "codigo": "PFZ"
+            },
+            "tipo": "Perfume"
+          },
+          "cantidad": 4,
+          "subtotal": 3600.0,
+          "precioUnitario": 900.0
+        },
+        {
+          "idDetalleVenta": 6,
+          "producto": {
+            "idProducto": 1,
+            "descripcion": "Paracetamol",
+            "precio": 500.0,
+            "codigo": "Prct250",
+            "laboratorio": {
+              "idLaboratorio": 1,
+              "nombre": "Bayer",
+              "codigo": "BAY"
+            },
+            "tipo": "Medicamento"
+          },
+          "cantidad": 5,
+          "subtotal": 2500.0,
+          "precioUnitario": 500.0
+        }
+      ]
+    },
+    {
+      "idVenta": 3,
+      "fecha": "2024-06-03",
+      "formaPago": {
+        "idFormaPago": 3,
+        "nombre": "Tarjeta Débito"
+      },
+      "numeroTicket": "0002-000000003",
+      "total": 3600.0,
+      "empleadoAtencion": {
+        "idEmpleado": 6,
+        "apellido": "Gustavo",
+        "nombre": "Gimenez",
+        "dni": "12.182.942",
+        "cuil": "20-39218865-3",
+        "numeroAfiliado": "12345",
+        "obraSocial": {
+          "idObraSocial": 1,
+          "nombre": "OSDE"
+        },
+        "domicilio": {
+          "idDomicilio": 5,
+          "calle": "Calle San Martín",
+          "numero": 1589,
+          "ciudad": "Lanus",
+          "provincia": "Buenos Aires"
+        }
+      },
+      "empleadoCaja": {
+        "idEmpleado": 5,
+        "apellido": "Pedro",
+        "nombre": "López",
+        "dni": "39.112.845",
+        "cuil": "20-39112845-9",
+        "numeroAfiliado": "78195",
+        "obraSocial": {
+          "idObraSocial": 1,
+          "nombre": "OSDE"
+        },
+        "domicilio": {
+          "idDomicilio": 4,
+          "calle": "Av Corrientes",
+          "numero": 1120,
+          "ciudad": "Belgrano",
+          "provincia": "Ciudad Autónoma de Buenos Aires"
+        }
+      },
+      "cliente": {
+        "idCliente": 3,
+        "apellido": "Martínez",
+        "nombre": "Ana",
+        "dni": "",
+        "obraSocial": {
+          "idObraSocial": 3,
+          "nombre": "Galeno"
+        },
+        "domicilio": {
+          "idDomicilio": 3,
+          "calle": "Calle Sarmiento",
+          "numero": 2732,
+          "ciudad": "Retiro",
+          "provincia": "Ciudad Autónoma de Buenos Aires"
+        }
+      },
+      "detalles": [
+        {
+          "idDetalleVenta": 7,
+          "producto": {
+            "idProducto": 2,
+            "descripcion": "Ibuprofeno",
+            "precio": 700.0,
+            "codigo": "Ibu500",
+            "laboratorio": {
+              "idLaboratorio": 2,
+              "nombre": "Pfizer,",
+              "codigo": "PFZ"
+            },
+            "tipo": "Medicamento"
+          },
+          "cantidad": 3,
+          "subtotal": 2100.0,
+          "precioUnitario": 700.0
+        },
+        {
+          "idDetalleVenta": 8,
+          "producto": {
+            "idProducto": 3,
+            "descripcion": "Amoxicilina",
+            "precio": 1500.0,
+            "codigo": "Amox750",
+            "laboratorio": {
+              "idLaboratorio": 3,
+              "nombre": "Astrazeneca",
+              "codigo": "AZN"
+            },
+            "tipo": "Medicamento"
+          },
+          "cantidad": 1,
+          "subtotal": 1500.0,
+          "precioUnitario": 1500.0
+        }
+      ]
+    },
+    {
+      "idVenta": 4,
+      "fecha": "2024-06-04",
+      "formaPago": {
+        "idFormaPago": 3,
+        "nombre": "Tarjeta Débito"
+      },
+      "numeroTicket": "0002-000000004",
+      "total": 3000.0,
+      "empleadoAtencion": {
+        "idEmpleado": 6,
+        "apellido": "Gustavo",
+        "nombre": "Gimenez",
+        "dni": "12.182.942",
+        "cuil": "20-39218865-3",
+        "numeroAfiliado": "12345",
+        "obraSocial": {
+          "idObraSocial": 1,
+          "nombre": "OSDE"
+        },
+        "domicilio": {
+          "idDomicilio": 5,
+          "calle": "Calle San Martín",
+          "numero": 1589,
+          "ciudad": "Lanus",
+          "provincia": "Buenos Aires"
+        }
+      },
+      "empleadoCaja": {
+        "idEmpleado": 5,
+        "apellido": "Pedro",
+        "nombre": "López",
+        "dni": "39.112.845",
+        "cuil": "20-39112845-9",
+        "numeroAfiliado": "78195",
+        "obraSocial": {
+          "idObraSocial": 1,
+          "nombre": "OSDE"
+        },
+        "domicilio": {
+          "idDomicilio": 4,
+          "calle": "Av Corrientes",
+          "numero": 1120,
+          "ciudad": "Belgrano",
+          "provincia": "Ciudad Autónoma de Buenos Aires"
+        }
+      },
+      "cliente": {
+        "idCliente": 4,
+        "apellido": "Fernández",
+        "nombre": "Sofía",
+        "dni": "",
+        "obraSocial": {
+          "idObraSocial": 4,
+          "nombre": "Medicus"
+        },
+        "domicilio": {
+          "idDomicilio": 4,
+          "calle": "Av Corrientes",
+          "numero": 1120,
+          "ciudad": "Belgrano",
+          "provincia": "Ciudad Autónoma de Buenos Aires"
+        }
+      },
+      "detalles": [
+        {
+          "idDetalleVenta": 9,
+          "producto": {
+            "idProducto": 4,
+            "descripcion": "Nivea Men",
+            "precio": 400.0,
+            "codigo": "NvM01",
+            "laboratorio": {
+              "idLaboratorio": 1,
+              "nombre": "Bayer",
+              "codigo": "BAY"
+            },
+            "tipo": "Perfume"
+          },
+          "cantidad": 3,
+          "subtotal": 1200.0,
+          "precioUnitario": 400.0
+        },
+        {
+          "idDetalleVenta": 10,
+          "producto": {
+            "idProducto": 5,
+            "descripcion": "Rexona Antibacterial",
+            "precio": 900.0,
+            "codigo": "Rxn01",
+            "laboratorio": {
+              "idLaboratorio": 2,
+              "nombre": "Pfizer,",
+              "codigo": "PFZ"
+            },
+            "tipo": "Perfume"
+          },
+          "cantidad": 2,
+          "subtotal": 1800.0,
+          "precioUnitario": 900.0
+        }
+      ]
+    }
+  ]
+}
