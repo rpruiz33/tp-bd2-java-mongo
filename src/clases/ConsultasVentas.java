@@ -1,8 +1,6 @@
 package clases;
 
-import org.bson.BsonNull;
 import org.bson.Document;
-
 import com.mongodb.client.*;
 import com.mongodb.client.model.Sorts;
 
@@ -14,6 +12,7 @@ import static com.mongodb.client.model.Projections.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
 
 public class ConsultasVentas {
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -26,216 +25,371 @@ public class ConsultasVentas {
             LocalDate fechaDesde = LocalDate.of(2024, 6, 1);
             LocalDate fechaHasta = LocalDate.of(2024, 6, 30);
 
-            System.out.println("\n----- Consulta 1: Ventas total y por sucursal -----");
-            reporteVentasPorSucursal(ventas, fechaDesde, fechaHasta);
-
-            System.out.println("\n----- Consulta 2: Ventas por obra social -----");
-            reporteVentasPorObraSocial(ventas, fechaDesde, fechaHasta);
-
-            System.out.println("\n----- Consulta 3: Cobranza total y por sucursal -----");
-            reporteCobranzaPorSucursal(ventas, fechaDesde, fechaHasta);
-
-            System.out.println("\n----- Consulta 4: Ventas por tipo de producto -----");
-            reporteVentasPorTipoProducto(ventas, fechaDesde, fechaHasta);
-
-            System.out.println("\n----- Consulta 5: Ranking monto vendido por producto y sucursal -----");
-            rankingMontoVendido(ventas, fechaDesde, fechaHasta);
-
-            System.out.println("\n----- Consulta 6: Ranking cantidad productos vendidos -----");
-            rankingCantidadProductos(ventas, fechaDesde, fechaHasta);
-
-            System.out.println("\n----- Consulta 7: Ranking compras por cliente (total cadena) -----");
-            rankingComprasPorCliente(ventas, fechaDesde, fechaHasta);
-
-            System.out.println("\n----- Consulta 8: Ranking compras por cliente y sucursal -----");
-            rankingComprasPorClienteYSucursal(ventas, fechaDesde, fechaHasta);
+            ejecutarReportes(ventas, fechaDesde, fechaHasta);
         }
     }
 
-    private static void reporteVentasPorSucursal(MongoCollection<Document> ventas, LocalDate fechaDesde, LocalDate fechaHasta) {
-        AggregateIterable<Document> totalVentas = ventas.aggregate(Arrays.asList(
-            match(and(
-                gte("fecha", fechaDesde.format(DATE_FORMATTER)),
-                lte("fecha", fechaHasta.format(DATE_FORMATTER))
-            )),
-            group(null, sum("totalVentas", 1))
-        ));
+    private static void ejecutarReportes(MongoCollection<Document> ventas, 
+                                       LocalDate fechaDesde, 
+                                       LocalDate fechaHasta) {
+        System.out.println("\n=== REPORTES DE VENTAS ===");
+        System.out.println("Período: " + fechaDesde + " al " + fechaHasta + "\n");
 
-        System.out.println("Total de ventas en toda la cadena:");
-        for (Document doc : totalVentas) {
-            System.out.println(doc.toJson());
-        }
+        // Reporte 1: Ventas total y por sucursal con IDs
+        System.out.println("1. VENTAS TOTAL Y POR SUCURSAL (CON IDs)");
+        ventasTotalesYSucursales(ventas, fechaDesde, fechaHasta);
 
-        AggregateIterable<Document> ventasPorSucursal = ventas.aggregate(Arrays.asList(
-            match(and(
-                gte("fecha", fechaDesde.format(DATE_FORMATTER)),
-                lte("fecha", fechaHasta.format(DATE_FORMATTER))
-            )),
-            group("$sucursal.nombre", sum("cantidadVentas", 1)),
-            sort(Sorts.descending("cantidadVentas"))
-        ));
+        // Reporte 2: Ventas por obra social con IDs
+        System.out.println("\n2. VENTAS POR OBRA SOCIAL (CON IDs)");
+        ventasPorObraSocial(ventas, fechaDesde, fechaHasta);
 
-        System.out.println("\nVentas por sucursal:");
-        for (Document doc : ventasPorSucursal) {
-            System.out.println(doc.toJson());
-        }
+        // Reporte 3: Cobranza total y por sucursal con IDs
+        System.out.println("\n3. COBRANZA TOTAL Y POR SUCURSAL (CON IDs)");
+        cobranzaTotalYSucursales(ventas, fechaDesde, fechaHasta);
+
+        // Reporte 4: Ventas por tipo de producto con IDs
+        System.out.println("\n4. VENTAS POR TIPO DE PRODUCTO (CON IDs)");
+        ventasPorTipoProducto(ventas, fechaDesde, fechaHasta);
+
+        // Reporte 5: Ranking monto vendido con IDs
+        System.out.println("\n5. RANKING MONTO VENDIDO POR PRODUCTO/SUCURSAL (CON IDs)");
+        rankingMontoVendido(ventas, fechaDesde, fechaHasta);
+
+        // Reporte 6: Ranking cantidad productos con IDs
+        System.out.println("\n6. RANKING CANTIDAD PRODUCTOS VENDIDOS (CON IDs)");
+        rankingCantidadProductos(ventas, fechaDesde, fechaHasta);
+
+        // Reporte 7: Ranking clientes total cadena con IDs
+        System.out.println("\n7. RANKING CLIENTES (TOTAL CADENA CON IDs)");
+        rankingClientesTotal(ventas, fechaDesde, fechaHasta);
+
+        // Reporte 8: Ranking clientes por sucursal con IDs
+        System.out.println("\n8. RANKING CLIENTES POR SUCURSAL (CON IDs)");
+        rankingClientesPorSucursal(ventas, fechaDesde, fechaHasta);
     }
 
-    private static void reporteVentasPorObraSocial(MongoCollection<Document> ventas, LocalDate fechaDesde, LocalDate fechaHasta) {
-        AggregateIterable<Document> ventasPorOS = ventas.aggregate(Arrays.asList(
+    private static void ventasTotalesYSucursales(MongoCollection<Document> ventas, 
+            LocalDate fechaDesde, LocalDate fechaHasta) {
+        
+        // Consulta para obtener todas las ventas con sus IDs
+        FindIterable<Document> todasVentas = ventas.find(
+            and(
+                gte("fecha", fechaDesde.format(DATE_FORMATTER)),
+                lte("fecha", fechaHasta.format(DATE_FORMATTER))
+            ))
+            .projection(fields(include("idVenta", "total", "sucursal.nombre"), excludeId()));
+
+        System.out.println("\nDetalle de todas las ventas:");
+        System.out.println("ID Venta\tTotal\t\tSucursal");
+        System.out.println("----------------------------------");
+        for (Document doc : todasVentas) {
+            // Se asume que sucursal.nombre siempre está presente o el valor predeterminado es "Sin sucursal"
+            System.out.printf("%d\t\t$%.2f\t%s\n", 
+                doc.getInteger("idVenta"),
+                doc.getDouble("total"),
+                doc.getEmbedded(Arrays.asList("sucursal", "nombre"), "Sin sucursal"));
+        }
+
+        // Totales por sucursal
+        AggregateIterable<Document> porSucursal = ventas.aggregate(Arrays.asList(
             match(and(
                 gte("fecha", fechaDesde.format(DATE_FORMATTER)),
                 lte("fecha", fechaHasta.format(DATE_FORMATTER))
             )),
             group(
-                new Document("obraSocial",
-                    new Document("$ifNull", Arrays.asList("$cliente.obraSocial.nombre", "Privado"))
-                ),
-                sum("cantidadVentas", 1)
+                // Directamente el resultado de $ifNull como _id
+                new Document("$ifNull", Arrays.asList("$sucursal.nombre", "SIN_SUCURSAL")),
+                sum("cantidadVentas", 1),
+                sum("totalVentas", "$total"),
+                push("idsVentas", "$idVenta")
             ),
-            sort(Sorts.descending("cantidadVentas"))
+            sort(Sorts.descending("totalVentas"))
         ));
 
-        System.out.println("Ventas por obra social:");
-        for (Document doc : ventasPorOS) {
-            System.out.println(doc.toJson());
+        System.out.println("\nResumen por sucursal:");
+        System.out.println("Sucursal\tCantidad\tTotal\t\tIDs Ventas");
+        System.out.println("--------------------------------------------------");
+        for (Document doc : porSucursal) {
+            // Acceso directo a _id
+            System.out.printf("%s\t%d\t\t$%.2f\t%s\n",
+                doc.getString("_id"),
+                doc.getInteger("cantidadVentas"),
+                doc.getDouble("totalVentas"),
+                doc.getList("idsVentas", Integer.class).toString());
         }
     }
 
-    private static void reporteCobranzaPorSucursal(MongoCollection<Document> ventas, LocalDate fechaDesde, LocalDate fechaHasta) {
-        AggregateIterable<Document> totalCobranza = ventas.aggregate(Arrays.asList(
+    private static void ventasPorObraSocial(MongoCollection<Document> ventas, 
+            LocalDate fechaDesde, LocalDate fechaHasta) {
+        
+        AggregateIterable<Document> resultado = ventas.aggregate(Arrays.asList(
             match(and(
                 gte("fecha", fechaDesde.format(DATE_FORMATTER)),
                 lte("fecha", fechaHasta.format(DATE_FORMATTER))
             )),
-            group(new BsonNull(), sum("totalCobranza", "$total"))
+            group(
+                // Directamente el resultado de $ifNull como _id
+                new Document("$ifNull", Arrays.asList("$cliente.obraSocial.nombre", "PRIVADO")),
+                sum("cantidadVentas", 1),
+                sum("totalVentas", "$total"),
+                push("idsVentas", "$idVenta")
+            ),
+            sort(Sorts.descending("totalVentas"))
         ));
 
-        System.out.println("Total cobranza en toda la cadena:");
-        for (Document doc : totalCobranza) {
-            System.out.println(doc.toJson());
+        System.out.println("\nVentas por Obra Social:");
+        System.out.println("Obra Social\tCantidad\tTotal\t\tIDs Ventas");
+        System.out.println("--------------------------------------------------");
+        for (Document doc : resultado) {
+            System.out.printf("%s\t%d\t\t$%.2f\t%s\n",
+                doc.getString("_id"),
+                doc.getInteger("cantidadVentas"),
+                doc.getDouble("totalVentas"),
+                doc.getList("idsVentas", Integer.class).toString());
         }
+    }
 
-        AggregateIterable<Document> cobranzaPorSucursal = ventas.aggregate(Arrays.asList(
+    private static void cobranzaTotalYSucursales(MongoCollection<Document> ventas, 
+            LocalDate fechaDesde, LocalDate fechaHasta) {
+        
+        // Total general
+        AggregateIterable<Document> totalGeneral = ventas.aggregate(Arrays.asList(
             match(and(
                 gte("fecha", fechaDesde.format(DATE_FORMATTER)),
                 lte("fecha", fechaHasta.format(DATE_FORMATTER))
             )),
-            group("$sucursal.nombre", sum("totalCobranza", "$total")),
+            group(
+                null,
+                sum("totalCobranza", "$total"),
+                push("idsVentas", "$idVenta")
+            )
+        ));
+
+        System.out.println("\nCobranza total:");
+        for (Document doc : totalGeneral) {
+            System.out.printf("Total Cobranza: $%.2f\nIDs Ventas: %s\n",
+                doc.getDouble("totalCobranza"),
+                doc.getList("idsVentas", Integer.class).toString());
+        }
+
+        // Por sucursal
+        AggregateIterable<Document> porSucursal = ventas.aggregate(Arrays.asList(
+            match(and(
+                gte("fecha", fechaDesde.format(DATE_FORMATTER)),
+                lte("fecha", fechaHasta.format(DATE_FORMATTER))
+            )),
+            group(
+                // Directamente el resultado de $ifNull como _id
+                new Document("$ifNull", Arrays.asList("$sucursal.nombre", "SIN_SUCURSAL")),
+                sum("totalCobranza", "$total"), // Ahora sí suma el total de ventas para la cobranza
+                push("idsVentas", "$idVenta")
+            ),
             sort(Sorts.descending("totalCobranza"))
         ));
 
         System.out.println("\nCobranza por sucursal:");
-        for (Document doc : cobranzaPorSucursal) {
-            System.out.println(doc.toJson());
+        System.out.println("Sucursal\tTotal\t\tIDs Ventas");
+        System.out.println("------------------------------------------");
+        for (Document doc : porSucursal) {
+            System.out.printf("%s\t$%.2f\t%s\n",
+                doc.getString("_id"),
+                doc.getDouble("totalCobranza"),
+                doc.getList("idsVentas", Integer.class).toString());
         }
     }
 
-    private static void reporteVentasPorTipoProducto(MongoCollection<Document> ventas, LocalDate fechaDesde, LocalDate fechaHasta) {
-        AggregateIterable<Document> ventasPorTipo = ventas.aggregate(Arrays.asList(
+    private static void ventasPorTipoProducto(MongoCollection<Document> ventas, 
+            LocalDate fechaDesde, LocalDate fechaHasta) {
+        
+        AggregateIterable<Document> resultado = ventas.aggregate(Arrays.asList(
             match(and(
                 gte("fecha", fechaDesde.format(DATE_FORMATTER)),
                 lte("fecha", fechaHasta.format(DATE_FORMATTER))
             )),
-            unwind("$productos"),
-            group("$productos.tipo",
+            unwind("$detalles"), 
+            group(
+                new Document("tipoProducto", 
+                    new Document("$ifNull", Arrays.asList("$detalles.producto.tipo", "SIN_TIPO")) 
+                ),
                 sum("cantidadVentas", 1),
-                sum("cantidadProductos", "$productos.cantidad")
+                sum("totalVentas", "$detalles.subtotal"), 
+                push("idsVentas", "$idVenta"),
+                addToSet("productosIds", "$detalles.producto.idProducto") // Agrega los IDs de productos únicos por tipo
             ),
-            sort(Sorts.descending("cantidadVentas"))
+            sort(Sorts.descending("totalVentas"))
         ));
 
-        System.out.println("Ventas por tipo de producto:");
-        for (Document doc : ventasPorTipo) {
-            System.out.println(doc.toJson());
+        System.out.println("\nVentas por Tipo de Producto:");
+        System.out.println("Tipo Producto\tCantidad\tTotal\t\tIDs Ventas\t\tIDs Productos"); 
+        System.out.println("----------------------------------------------------------------------------------"); 
+        for (Document doc : resultado) {
+            System.out.printf("%s\t%d\t\t$%.2f\t%s\t%s\n",
+                doc.getString("_id.tipoProducto"),
+                doc.getInteger("cantidadVentas"),
+                doc.getDouble("totalVentas"),
+                doc.getList("idsVentas", Integer.class).toString(),
+                doc.getList("productosIds", Integer.class).toString()); // Imprime la nueva columna con IDs de productos
         }
     }
 
-    private static void rankingMontoVendido(MongoCollection<Document> ventas, LocalDate fechaDesde, LocalDate fechaHasta) {
-        AggregateIterable<Document> ranking = ventas.aggregate(Arrays.asList(
+    private static void rankingMontoVendido(MongoCollection<Document> ventas, 
+            LocalDate fechaDesde, LocalDate fechaHasta) {
+        
+        AggregateIterable<Document> resultado = ventas.aggregate(Arrays.asList(
             match(and(
                 gte("fecha", fechaDesde.format(DATE_FORMATTER)),
                 lte("fecha", fechaHasta.format(DATE_FORMATTER))
             )),
-            unwind("$productos"),
+            unwind("$detalles"), 
             group(
-                new Document("sucursal", "$sucursal.nombre")
-                    .append("producto", "$productos.nombre"),
-                sum("montoTotal",
-                    new Document("$multiply", Arrays.asList("$productos.precio", "$productos.cantidad"))
-                )
+                new Document()
+                    .append("producto", new Document("$ifNull", Arrays.asList("$detalles.producto.descripcion", "Producto Desconocido"))) 
+                    .append("idProducto", new Document("$ifNull", Arrays.asList("$detalles.producto.idProducto", 0))) 
+                    .append("sucursal", 
+                        new Document("$ifNull", Arrays.asList("$sucursal.nombre", "SIN_SUCURSAL"))
+                    ),
+                sum("montoVendido", "$detalles.subtotal"), 
+                sum("cantidadVendida", "$detalles.cantidad"), 
+                push("idsVentas", "$idVenta")
+            ),
+            sort(Sorts.descending("montoVendido")),
+            limit(10)
+        ));
+
+        System.out.println("\nTop 10 productos por monto vendido:");
+        System.out.println("Producto (ID)\t\tSucursal\tMonto\t\tCantidad\tIDs Ventas");
+        System.out.println("----------------------------------------------------------------------------");
+        for (Document doc : resultado) {
+            System.out.printf("%s (%d)\t%s\t$%.2f\t%d\t\t%s\n",
+                doc.getString("_id.producto"),
+                doc.getInteger("_id.idProducto"),
+                doc.getString("_id.sucursal"),
+                doc.getDouble("montoVendido"),
+                doc.getInteger("cantidadVendida"),
+                doc.getList("idsVentas", Integer.class).toString());
+        }
+    }
+
+    private static void rankingCantidadProductos(MongoCollection<Document> ventas, 
+            LocalDate fechaDesde, LocalDate fechaHasta) {
+        
+        AggregateIterable<Document> resultado = ventas.aggregate(Arrays.asList(
+            match(and(
+                gte("fecha", fechaDesde.format(DATE_FORMATTER)),
+                lte("fecha", fechaHasta.format(DATE_FORMATTER))
+            )),
+            unwind("$detalles"), 
+            group(
+                new Document()
+                    .append("producto", new Document("$ifNull", Arrays.asList("$detalles.producto.descripcion", "Producto Desconocido"))) 
+                    .append("idProducto", new Document("$ifNull", Arrays.asList("$detalles.producto.idProducto", 0))), 
+                sum("cantidadVendida", "$detalles.cantidad"), 
+                sum("montoVendido", "$detalles.subtotal"), 
+                push("idsVentas", "$idVenta")
+            ),
+            sort(Sorts.descending("cantidadVendida")),
+            limit(10)
+        ));
+
+        System.out.println("\nTop 10 productos por cantidad vendida:");
+        System.out.println("Producto (ID)\t\tCantidad\tMonto\t\tIDs Ventas");
+        System.out.println("------------------------------------------------------------");
+        for (Document doc : resultado) {
+            System.out.printf("%s (%d)\t%d\t$%.2f\t%s\n",
+                doc.getString("_id.producto"),
+                doc.getInteger("_id.idProducto"),
+                doc.getInteger("cantidadVendida"),
+                doc.getDouble("montoVendido"),
+                doc.getList("idsVentas", Integer.class).toString());
+        }
+    }
+
+    private static void rankingClientesTotal(MongoCollection<Document> ventas, 
+            LocalDate fechaDesde, LocalDate fechaHasta) {
+        
+        AggregateIterable<Document> resultado = ventas.aggregate(Arrays.asList(
+            match(and(
+                gte("fecha", fechaDesde.format(DATE_FORMATTER)),
+                lte("fecha", fechaHasta.format(DATE_FORMATTER))
+            )),
+            group(
+                new Document()
+                    .append("cliente", new Document("$ifNull", Arrays.asList("$cliente.nombre", "Cliente Desconocido")))
+                    .append("idCliente", new Document("$ifNull", Arrays.asList("$cliente.idCliente", 0))),
+                sum("cantidadCompras", 1),
+                sum("montoTotal", "$total"),
+                push("idsVentas", "$idVenta")
             ),
             sort(Sorts.descending("montoTotal")),
             limit(10)
         ));
 
-        System.out.println("Top 10 productos por monto vendido:");
-        for (Document doc : ranking) {
-            System.out.println(doc.toJson());
+        System.out.println("\nTop 10 clientes por monto total:");
+        System.out.println("Cliente (ID)\t\tCompras\tMonto Total\tIDs Ventas");
+        System.out.println("--------------------------------------------------------");
+        for (Document doc : resultado) {
+            System.out.printf("%s (%d)\t%d\t$%.2f\t%s\n",
+                doc.getString("_id.cliente"),
+                doc.getInteger("_id.idCliente"),
+                doc.getInteger("cantidadCompras"),
+                doc.getDouble("montoTotal"),
+                doc.getList("idsVentas", Integer.class).toString());
         }
     }
 
-    private static void rankingCantidadProductos(MongoCollection<Document> ventas, LocalDate fechaDesde, LocalDate fechaHasta) {
-        AggregateIterable<Document> ranking = ventas.aggregate(Arrays.asList(
-            match(and(
-                gte("fecha", fechaDesde.format(DATE_FORMATTER)),
-                lte("fecha", fechaHasta.format(DATE_FORMATTER))
-            )),
-            unwind("$productos"),
-            group(
-                new Document("sucursal", "$sucursal.nombre")
-                    .append("producto", "$productos.nombre"),
-                sum("cantidadTotal", "$productos.cantidad")
-            ),
-            sort(Sorts.descending("cantidadTotal")),
-            limit(10)
-        ));
-
-        System.out.println("Top 10 productos por cantidad vendida:");
-        for (Document doc : ranking) {
-            System.out.println(doc.toJson());
-        }
-    }
-
-    private static void rankingComprasPorCliente(MongoCollection<Document> ventas, LocalDate fechaDesde, LocalDate fechaHasta) {
-        AggregateIterable<Document> ranking = ventas.aggregate(Arrays.asList(
-            match(and(
-                gte("fecha", fechaDesde.format(DATE_FORMATTER)),
-                lte("fecha", fechaHasta.format(DATE_FORMATTER))
-            )),
-            group("$cliente.nombreCompleto",
-                sum("totalCompras", "$total"),
-                sum("cantidadCompras", 1)
-            ),
-            sort(Sorts.descending("totalCompras")),
-            limit(10)
-        ));
-
-        System.out.println("Top 10 clientes por monto total de compras:");
-        for (Document doc : ranking) {
-            System.out.println(doc.toJson());
-        }
-    }
-
-    private static void rankingComprasPorClienteYSucursal(MongoCollection<Document> ventas, LocalDate fechaDesde, LocalDate fechaHasta) {
-        AggregateIterable<Document> ranking = ventas.aggregate(Arrays.asList(
+    private static void rankingClientesPorSucursal(MongoCollection<Document> ventas, 
+            LocalDate fechaDesde, LocalDate fechaHasta) {
+        
+        AggregateIterable<Document> resultado = ventas.aggregate(Arrays.asList(
             match(and(
                 gte("fecha", fechaDesde.format(DATE_FORMATTER)),
                 lte("fecha", fechaHasta.format(DATE_FORMATTER))
             )),
             group(
-                new Document("sucursal", "$sucursal.nombre")
-                    .append("cliente", "$cliente.nombreCompleto"),
-                sum("totalCompras", "$total"),
-                sum("cantidadCompras", 1)
+                new Document()
+                    .append("sucursal", 
+                        new Document("$ifNull", Arrays.asList("$sucursal.nombre", "SIN_SUCURSAL"))
+                    )
+                    .append("cliente", new Document("$ifNull", Arrays.asList("$cliente.nombre", "Cliente Desconocido")))
+                    .append("idCliente", new Document("$ifNull", Arrays.asList("$cliente.idCliente", 0))),
+                sum("cantidadCompras", 1),
+                sum("montoTotal", "$total"),
+                push("idsVentas", "$idVenta")
             ),
-            sort(Sorts.descending("totalCompras")),
-            limit(10)
+            sort(Sorts.orderBy(
+                Sorts.ascending("_id.sucursal"),
+                Sorts.descending("montoTotal")
+            )),
+            group(
+                "$_id.sucursal",
+                push("clientes", new Document("cliente", "$_id.cliente")
+                    .append("idCliente", "$_id.idCliente")
+                    .append("compras", "$cantidadCompras")
+                    .append("monto", "$montoTotal")
+                    .append("idsVentas", "$idsVentas")
+                )
+            ),
+            project(new Document("sucursal", "$_id")
+                .append("clientes", new Document("$slice", Arrays.asList("$clientes", 5)))
+            ),
+            sort(Sorts.ascending("_id"))
         ));
 
-        System.out.println("Top 10 clientes por monto total de compras por sucursal:");
-        for (Document doc : ranking) {
-            System.out.println(doc.toJson());
+        System.out.println("\nTop 5 clientes por sucursal:");
+        for (Document doc : resultado) {
+            System.out.println("\nSucursal: " + doc.getString("_id"));
+            System.out.println("Cliente (ID)\t\tCompras\tMonto\t\tIDs Ventas");
+            System.out.println("----------------------------------------------------");
+            
+            List<Document> clientes = doc.getList("clientes", Document.class);
+            for (Document cliente : clientes) {
+                System.out.printf("%s (%d)\t%d\t$%.2f\t%s\n",
+                    cliente.getString("cliente"),
+                    cliente.getInteger("idCliente"),
+                    cliente.getInteger("compras"),
+                    cliente.getDouble("monto"),
+                    cliente.getList("idsVentas", Integer.class).toString());
+            }
         }
     }
 }

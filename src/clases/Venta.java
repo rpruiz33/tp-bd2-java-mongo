@@ -15,6 +15,7 @@ public class Venta {
 	private Empleado empleadoCaja;
     private Cliente cliente;
     private List<DetalleVenta> detalles;
+    private Sucursal sucursal;
     
 
     public Venta(int idVenta, LocalDate fecha, FormaPago formaPago, String numeroTicket, Empleado empleadoCaja, Empleado empleadoAtencion,Cliente cliente) {
@@ -63,4 +64,6 @@ public class Venta {
     public double calcularPrecioFinal() {
         return detalles.stream().mapToDouble(DetalleVenta::getSubtotal).sum();
     }
+    public Sucursal getSucursal() { return sucursal; }
+    public void setSucursal(Sucursal sucursal) { this.sucursal = sucursal; }
 }

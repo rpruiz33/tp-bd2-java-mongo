@@ -23,28 +23,40 @@
       "calle": "Calle 9 de Julio",
       "numero": 2453,
       "ciudad": "Almirante Brown",
-      "provincia": "Buenos Aires"
+      "provincia": "Buenos Aires",
+      "localidad": null
     },
     {
       "idDomicilio": 2,
       "calle": "Calle Rio Negro",
       "numero": 3180,
       "ciudad": "Lomas de Zamora",
-      "provincia": "Buenos Aires"
+      "provincia": "Buenos Aires",
+      "localidad": null
     },
     {
       "idDomicilio": 3,
       "calle": "Calle Sarmiento",
       "numero": 2732,
       "ciudad": "Retiro",
-      "provincia": "Ciudad Autónoma de Buenos Aires"
+      "provincia": "Ciudad Autónoma de Buenos Aires",
+      "localidad": null
     },
     {
       "idDomicilio": 4,
       "calle": "Av Corrientes",
       "numero": 1120,
       "ciudad": "Belgrano",
-      "provincia": "Ciudad Autónoma de Buenos Aires"
+      "provincia": "Ciudad Autónoma de Buenos Aires",
+      "localidad": null
+    },
+    {
+      "idDomicilio": 5,
+      "calle": "Calle San Martín",
+      "numero": 1589,
+      "ciudad": "Lanus",
+      "provincia": "Buenos Aires",
+      "localidad": null
     }
   ],
   "sucursales": [
@@ -56,7 +68,8 @@
         "calle": "Calle 9 de Julio",
         "numero": 2453,
         "ciudad": "Almirante Brown",
-        "provincia": "Buenos Aires"
+        "provincia": "Buenos Aires",
+        "localidad": null
       },
       "empleados": [
         {
@@ -75,7 +88,8 @@
             "calle": "Calle Rio Negro",
             "numero": 3180,
             "ciudad": "Lomas de Zamora",
-            "provincia": "Buenos Aires"
+            "provincia": "Buenos Aires",
+            "localidad": null
           }
         },
         {
@@ -94,7 +108,8 @@
             "calle": "Calle Rio Negro",
             "numero": 3180,
             "ciudad": "Lomas de Zamora",
-            "provincia": "Buenos Aires"
+            "provincia": "Buenos Aires",
+            "localidad": null
           }
         },
         {
@@ -113,7 +128,8 @@
             "calle": "Calle Sarmiento",
             "numero": 2732,
             "ciudad": "Retiro",
-            "provincia": "Ciudad Autónoma de Buenos Aires"
+            "provincia": "Ciudad Autónoma de Buenos Aires",
+            "localidad": null
           }
         }
       ],
@@ -133,7 +149,8 @@
           "calle": "Calle Rio Negro",
           "numero": 3180,
           "ciudad": "Lomas de Zamora",
-          "provincia": "Buenos Aires"
+          "provincia": "Buenos Aires",
+          "localidad": null
         }
       }
     },
@@ -145,7 +162,8 @@
         "calle": "Calle Sarmiento",
         "numero": 2732,
         "ciudad": "Retiro",
-        "provincia": "Ciudad Autónoma de Buenos Aires"
+        "provincia": "Ciudad Autónoma de Buenos Aires",
+        "localidad": null
       },
       "empleados": [
         {
@@ -164,7 +182,8 @@
             "calle": "Calle Rio Negro",
             "numero": 3180,
             "ciudad": "Lomas de Zamora",
-            "provincia": "Buenos Aires"
+            "provincia": "Buenos Aires",
+            "localidad": null
           }
         },
         {
@@ -183,7 +202,8 @@
             "calle": "Av Corrientes",
             "numero": 1120,
             "ciudad": "Belgrano",
-            "provincia": "Ciudad Autónoma de Buenos Aires"
+            "provincia": "Ciudad Autónoma de Buenos Aires",
+            "localidad": null
           }
         },
         {
@@ -202,17 +222,18 @@
             "calle": "Calle San Martín",
             "numero": 1589,
             "ciudad": "Lanus",
-            "provincia": "Buenos Aires"
+            "provincia": "Buenos Aires",
+            "localidad": null
           }
         }
       ],
       "encargado": {
-        "idEmpleado": 1,
-        "apellido": "Maria",
-        "nombre": "Pérez",
-        "dni": "12.325.682",
-        "cuil": "20-12345-5",
-        "numeroAfiliado": "12834",
+        "idEmpleado": 2,
+        "apellido": "Ernesto",
+        "nombre": "Martinez",
+        "dni": "14.568.987",
+        "cuil": "20-54321-7",
+        "numeroAfiliado": "88746",
         "obraSocial": {
           "idObraSocial": 2,
           "nombre": "Swiss Medical"
@@ -222,7 +243,8 @@
           "calle": "Calle Rio Negro",
           "numero": 3180,
           "ciudad": "Lomas de Zamora",
-          "provincia": "Buenos Aires"
+          "provincia": "Buenos Aires",
+          "localidad": null
         }
       }
     }
@@ -244,7 +266,8 @@
         "calle": "Calle Rio Negro",
         "numero": 3180,
         "ciudad": "Lomas de Zamora",
-        "provincia": "Buenos Aires"
+        "provincia": "Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -263,7 +286,8 @@
         "calle": "Calle Rio Negro",
         "numero": 3180,
         "ciudad": "Lomas de Zamora",
-        "provincia": "Buenos Aires"
+        "provincia": "Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -282,7 +306,8 @@
         "calle": "Calle Rio Negro",
         "numero": 3180,
         "ciudad": "Lomas de Zamora",
-        "provincia": "Buenos Aires"
+        "provincia": "Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -301,7 +326,8 @@
         "calle": "Calle Sarmiento",
         "numero": 2732,
         "ciudad": "Retiro",
-        "provincia": "Ciudad Autónoma de Buenos Aires"
+        "provincia": "Ciudad Autónoma de Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -320,7 +346,8 @@
         "calle": "Av Corrientes",
         "numero": 1120,
         "ciudad": "Belgrano",
-        "provincia": "Ciudad Autónoma de Buenos Aires"
+        "provincia": "Ciudad Autónoma de Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -339,7 +366,8 @@
         "calle": "Calle San Martín",
         "numero": 1589,
         "ciudad": "Lanus",
-        "provincia": "Buenos Aires"
+        "provincia": "Buenos Aires",
+        "localidad": null
       }
     }
   ],
@@ -355,6 +383,10 @@
     {
       "idFormaPago": 3,
       "nombre": "Tarjeta Débito"
+    },
+    {
+      "idFormaPago": 4,
+      "nombre": "Transferencia Bancaria"
     }
   ],
   "clientes": [
@@ -372,7 +404,8 @@
         "calle": "Calle 9 de Julio",
         "numero": 2453,
         "ciudad": "Almirante Brown",
-        "provincia": "Buenos Aires"
+        "provincia": "Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -389,7 +422,8 @@
         "calle": "Calle Rio Negro",
         "numero": 3180,
         "ciudad": "Lomas de Zamora",
-        "provincia": "Buenos Aires"
+        "provincia": "Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -406,7 +440,8 @@
         "calle": "Calle Sarmiento",
         "numero": 2732,
         "ciudad": "Retiro",
-        "provincia": "Ciudad Autónoma de Buenos Aires"
+        "provincia": "Ciudad Autónoma de Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -423,7 +458,8 @@
         "calle": "Av Corrientes",
         "numero": 1120,
         "ciudad": "Belgrano",
-        "provincia": "Ciudad Autónoma de Buenos Aires"
+        "provincia": "Ciudad Autónoma de Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -440,7 +476,8 @@
         "calle": "Calle 9 de Julio",
         "numero": 2453,
         "ciudad": "Almirante Brown",
-        "provincia": "Buenos Aires"
+        "provincia": "Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -457,7 +494,8 @@
         "calle": "Calle Rio Negro",
         "numero": 3180,
         "ciudad": "Lomas de Zamora",
-        "provincia": "Buenos Aires"
+        "provincia": "Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -474,7 +512,8 @@
         "calle": "Calle Sarmiento",
         "numero": 2732,
         "ciudad": "Retiro",
-        "provincia": "Ciudad Autónoma de Buenos Aires"
+        "provincia": "Ciudad Autónoma de Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -491,7 +530,8 @@
         "calle": "Av Corrientes",
         "numero": 1120,
         "ciudad": "Belgrano",
-        "provincia": "Ciudad Autónoma de Buenos Aires"
+        "provincia": "Ciudad Autónoma de Buenos Aires",
+        "localidad": null
       }
     },
     {
@@ -508,7 +548,8 @@
         "calle": "Calle 9 de Julio",
         "numero": 2453,
         "ciudad": "Almirante Brown",
-        "provincia": "Buenos Aires"
+        "provincia": "Buenos Aires",
+        "localidad": null
       }
     }
   ],
@@ -520,7 +561,7 @@
     },
     {
       "idLaboratorio": 2,
-      "nombre": "Pfizer,",
+      "nombre": "Pfizer",
       "codigo": "PFZ"
     },
     {
@@ -549,7 +590,7 @@
       "codigo": "Ibu500",
       "laboratorio": {
         "idLaboratorio": 2,
-        "nombre": "Pfizer,",
+        "nombre": "Pfizer",
         "codigo": "PFZ"
       },
       "tipo": "Medicamento"
@@ -576,7 +617,7 @@
         "nombre": "Bayer",
         "codigo": "BAY"
       },
-      "tipo": "Perfume"
+      "tipo": "Perfumería"
     },
     {
       "idProducto": 5,
@@ -585,10 +626,46 @@
       "codigo": "Rxn01",
       "laboratorio": {
         "idLaboratorio": 2,
-        "nombre": "Pfizer,",
+        "nombre": "Pfizer",
         "codigo": "PFZ"
       },
-      "tipo": "Perfume"
+      "tipo": "Perfumería"
+    },
+    {
+      "idProducto": 6,
+      "descripcion": "Aspirina",
+      "precio": 300.0,
+      "codigo": "Asp100",
+      "laboratorio": {
+        "idLaboratorio": 1,
+        "nombre": "Bayer",
+        "codigo": "BAY"
+      },
+      "tipo": "Medicamento"
+    },
+    {
+      "idProducto": 7,
+      "descripcion": "Jabón Dove",
+      "precio": 350.0,
+      "codigo": "JabDove",
+      "laboratorio": {
+        "idLaboratorio": 3,
+        "nombre": "Astrazeneca",
+        "codigo": "AZN"
+      },
+      "tipo": "Higiene"
+    },
+    {
+      "idProducto": 8,
+      "descripcion": "Shampoo Head\u0026Shoulders",
+      "precio": 600.0,
+      "codigo": "ShHS",
+      "laboratorio": {
+        "idLaboratorio": 2,
+        "nombre": "Pfizer",
+        "codigo": "PFZ"
+      },
+      "tipo": "Higiene"
     }
   ],
   "ventas": [
@@ -617,7 +694,8 @@
           "calle": "Calle Sarmiento",
           "numero": 2732,
           "ciudad": "Retiro",
-          "provincia": "Ciudad Autónoma de Buenos Aires"
+          "provincia": "Ciudad Autónoma de Buenos Aires",
+          "localidad": null
         }
       },
       "empleadoCaja": {
@@ -636,7 +714,8 @@
           "calle": "Calle Rio Negro",
           "numero": 3180,
           "ciudad": "Lomas de Zamora",
-          "provincia": "Buenos Aires"
+          "provincia": "Buenos Aires",
+          "localidad": null
         }
       },
       "cliente": {
@@ -653,7 +732,8 @@
           "calle": "Calle 9 de Julio",
           "numero": 2453,
           "ciudad": "Almirante Brown",
-          "provincia": "Buenos Aires"
+          "provincia": "Buenos Aires",
+          "localidad": null
         }
       },
       "detalles": [
@@ -684,7 +764,7 @@
             "codigo": "Ibu500",
             "laboratorio": {
               "idLaboratorio": 2,
-              "nombre": "Pfizer,",
+              "nombre": "Pfizer",
               "codigo": "PFZ"
             },
             "tipo": "Medicamento"
@@ -711,7 +791,101 @@
           "subtotal": 4500.0,
           "precioUnitario": 1500.0
         }
-      ]
+      ],
+      "sucursal": {
+        "idSucursal": 1,
+        "nombre": "Sucursal Central",
+        "domicilio": {
+          "idDomicilio": 1,
+          "calle": "Calle 9 de Julio",
+          "numero": 2453,
+          "ciudad": "Almirante Brown",
+          "provincia": "Buenos Aires",
+          "localidad": null
+        },
+        "empleados": [
+          {
+            "idEmpleado": 1,
+            "apellido": "Maria",
+            "nombre": "Pérez",
+            "dni": "12.325.682",
+            "cuil": "20-12345-5",
+            "numeroAfiliado": "12834",
+            "obraSocial": {
+              "idObraSocial": 2,
+              "nombre": "Swiss Medical"
+            },
+            "domicilio": {
+              "idDomicilio": 2,
+              "calle": "Calle Rio Negro",
+              "numero": 3180,
+              "ciudad": "Lomas de Zamora",
+              "provincia": "Buenos Aires",
+              "localidad": null
+            }
+          },
+          {
+            "idEmpleado": 3,
+            "apellido": "Juan",
+            "nombre": "Pérez",
+            "dni": "28.345.672",
+            "cuil": "20-28345672-5",
+            "numeroAfiliado": "58716",
+            "obraSocial": {
+              "idObraSocial": 2,
+              "nombre": "Swiss Medical"
+            },
+            "domicilio": {
+              "idDomicilio": 2,
+              "calle": "Calle Rio Negro",
+              "numero": 3180,
+              "ciudad": "Lomas de Zamora",
+              "provincia": "Buenos Aires",
+              "localidad": null
+            }
+          },
+          {
+            "idEmpleado": 4,
+            "apellido": "María",
+            "nombre": "González",
+            "dni": "33.876.904",
+            "cuil": "27-33876904-3",
+            "numeroAfiliado": "48397",
+            "obraSocial": {
+              "idObraSocial": 3,
+              "nombre": "Galeno"
+            },
+            "domicilio": {
+              "idDomicilio": 3,
+              "calle": "Calle Sarmiento",
+              "numero": 2732,
+              "ciudad": "Retiro",
+              "provincia": "Ciudad Autónoma de Buenos Aires",
+              "localidad": null
+            }
+          }
+        ],
+        "encargado": {
+          "idEmpleado": 1,
+          "apellido": "Maria",
+          "nombre": "Pérez",
+          "dni": "12.325.682",
+          "cuil": "20-12345-5",
+          "numeroAfiliado": "12834",
+          "obraSocial": {
+            "idObraSocial": 2,
+            "nombre": "Swiss Medical"
+          },
+          "domicilio": {
+            "idDomicilio": 2,
+            "calle": "Calle Rio Negro",
+            "numero": 3180,
+            "ciudad": "Lomas de Zamora",
+            "provincia": "Buenos Aires",
+            "localidad": null
+          }
+        }
+      }
     },
     {
       "idVenta": 2,
@@ -720,7 +894,7 @@
         "idFormaPago": 2,
         "nombre": "Tarjeta Crédito"
       },
-      "numeroTicket": "0001-000000002",
+      "numeroTicket": "0001-00000002",
       "total": 6900.0,
       "empleadoAtencion": {
         "idEmpleado": 4,
@@ -738,7 +912,8 @@
           "calle": "Calle Sarmiento",
           "numero": 2732,
           "ciudad": "Retiro",
-          "provincia": "Ciudad Autónoma de Buenos Aires"
+          "provincia": "Ciudad Autónoma de Buenos Aires",
+          "localidad": null
         }
       },
       "empleadoCaja": {
@@ -757,7 +932,8 @@
           "calle": "Calle Rio Negro",
           "numero": 3180,
           "ciudad": "Lomas de Zamora",
-          "provincia": "Buenos Aires"
+          "provincia": "Buenos Aires",
+          "localidad": null
         }
       },
       "cliente": {
@@ -774,7 +950,8 @@
           "calle": "Calle Rio Negro",
           "numero": 3180,
           "ciudad": "Lomas de Zamora",
-          "provincia": "Buenos Aires"
+          "provincia": "Buenos Aires",
+          "localidad": null
         }
       },
       "detalles": [
@@ -790,7 +967,7 @@
               "nombre": "Bayer",
               "codigo": "BAY"
             },
-            "tipo": "Perfume"
+            "tipo": "Perfumería"
           },
           "cantidad": 2,
           "subtotal": 800.0,
@@ -805,10 +982,10 @@
             "codigo": "Rxn01",
             "laboratorio": {
               "idLaboratorio": 2,
-              "nombre": "Pfizer,",
+              "nombre": "Pfizer",
               "codigo": "PFZ"
             },
-            "tipo": "Perfume"
+            "tipo": "Perfumería"
           },
           "cantidad": 4,
           "subtotal": 3600.0,
@@ -832,7 +1009,101 @@
           "subtotal": 2500.0,
           "precioUnitario": 500.0
         }
-      ]
+      ],
+      "sucursal": {
+        "idSucursal": 1,
+        "nombre": "Sucursal Central",
+        "domicilio": {
+          "idDomicilio": 1,
+          "calle": "Calle 9 de Julio",
+          "numero": 2453,
+          "ciudad": "Almirante Brown",
+          "provincia": "Buenos Aires",
+          "localidad": null
+        },
+        "empleados": [
+          {
+            "idEmpleado": 1,
+            "apellido": "Maria",
+            "nombre": "Pérez",
+            "dni": "12.325.682",
+            "cuil": "20-12345-5",
+            "numeroAfiliado": "12834",
+            "obraSocial": {
+              "idObraSocial": 2,
+              "nombre": "Swiss Medical"
+            },
+            "domicilio": {
+              "idDomicilio": 2,
+              "calle": "Calle Rio Negro",
+              "numero": 3180,
+              "ciudad": "Lomas de Zamora",
+              "provincia": "Buenos Aires",
+              "localidad": null
+            }
+          },
+          {
+            "idEmpleado": 3,
+            "apellido": "Juan",
+            "nombre": "Pérez",
+            "dni": "28.345.672",
+            "cuil": "20-28345672-5",
+            "numeroAfiliado": "58716",
+            "obraSocial": {
+              "idObraSocial": 2,
+              "nombre": "Swiss Medical"
+            },
+            "domicilio": {
+              "idDomicilio": 2,
+              "calle": "Calle Rio Negro",
+              "numero": 3180,
+              "ciudad": "Lomas de Zamora",
+              "provincia": "Buenos Aires",
+              "localidad": null
+            }
+          },
+          {
+            "idEmpleado": 4,
+            "apellido": "María",
+            "nombre": "González",
+            "dni": "33.876.904",
+            "cuil": "27-33876904-3",
+            "numeroAfiliado": "48397",
+            "obraSocial": {
+              "idObraSocial": 3,
+              "nombre": "Galeno"
+            },
+            "domicilio": {
+              "idDomicilio": 3,
+              "calle": "Calle Sarmiento",
+              "numero": 2732,
+              "ciudad": "Retiro",
+              "provincia": "Ciudad Autónoma de Buenos Aires",
+              "localidad": null
+            }
+          }
+        ],
+        "encargado": {
+          "idEmpleado": 1,
+          "apellido": "Maria",
+          "nombre": "Pérez",
+          "dni": "12.325.682",
+          "cuil": "20-12345-5",
+          "numeroAfiliado": "12834",
+          "obraSocial": {
+            "idObraSocial": 2,
+            "nombre": "Swiss Medical"
+          },
+          "domicilio": {
+            "idDomicilio": 2,
+            "calle": "Calle Rio Negro",
+            "numero": 3180,
+            "ciudad": "Lomas de Zamora",
+            "provincia": "Buenos Aires",
+            "localidad": null
+          }
+        }
+      }
     },
     {
       "idVenta": 3,
@@ -841,7 +1112,7 @@
         "idFormaPago": 3,
         "nombre": "Tarjeta Débito"
       },
-      "numeroTicket": "0002-000000003",
+      "numeroTicket": "0002-00000003",
       "total": 3600.0,
       "empleadoAtencion": {
         "idEmpleado": 6,
@@ -859,7 +1130,8 @@
           "calle": "Calle San Martín",
           "numero": 1589,
           "ciudad": "Lanus",
-          "provincia": "Buenos Aires"
+          "provincia": "Buenos Aires",
+          "localidad": null
         }
       },
       "empleadoCaja": {
@@ -878,7 +1150,8 @@
           "calle": "Av Corrientes",
           "numero": 1120,
           "ciudad": "Belgrano",
-          "provincia": "Ciudad Autónoma de Buenos Aires"
+          "provincia": "Ciudad Autónoma de Buenos Aires",
+          "localidad": null
         }
       },
       "cliente": {
@@ -895,7 +1168,8 @@
           "calle": "Calle Sarmiento",
           "numero": 2732,
           "ciudad": "Retiro",
-          "provincia": "Ciudad Autónoma de Buenos Aires"
+          "provincia": "Ciudad Autónoma de Buenos Aires",
+          "localidad": null
         }
       },
       "detalles": [
@@ -908,7 +1182,7 @@
             "codigo": "Ibu500",
             "laboratorio": {
               "idLaboratorio": 2,
-              "nombre": "Pfizer,",
+              "nombre": "Pfizer",
               "codigo": "PFZ"
             },
             "tipo": "Medicamento"
@@ -935,7 +1209,101 @@
           "subtotal": 1500.0,
           "precioUnitario": 1500.0
         }
-      ]
+      ],
+      "sucursal": {
+        "idSucursal": 2,
+        "nombre": "Sucursal Norte",
+        "domicilio": {
+          "idDomicilio": 3,
+          "calle": "Calle Sarmiento",
+          "numero": 2732,
+          "ciudad": "Retiro",
+          "provincia": "Ciudad Autónoma de Buenos Aires",
+          "localidad": null
+        },
+        "empleados": [
+          {
+            "idEmpleado": 2,
+            "apellido": "Ernesto",
+            "nombre": "Martinez",
+            "dni": "14.568.987",
+            "cuil": "20-54321-7",
+            "numeroAfiliado": "88746",
+            "obraSocial": {
+              "idObraSocial": 2,
+              "nombre": "Swiss Medical"
+            },
+            "domicilio": {
+              "idDomicilio": 2,
+              "calle": "Calle Rio Negro",
+              "numero": 3180,
+              "ciudad": "Lomas de Zamora",
+              "provincia": "Buenos Aires",
+              "localidad": null
+            }
+          },
+          {
+            "idEmpleado": 5,
+            "apellido": "Pedro",
+            "nombre": "López",
+            "dni": "39.112.845",
+            "cuil": "20-39112845-9",
+            "numeroAfiliado": "78195",
+            "obraSocial": {
+              "idObraSocial": 1,
+              "nombre": "OSDE"
+            },
+            "domicilio": {
+              "idDomicilio": 4,
+              "calle": "Av Corrientes",
+              "numero": 1120,
+              "ciudad": "Belgrano",
+              "provincia": "Ciudad Autónoma de Buenos Aires",
+              "localidad": null
+            }
+          },
+          {
+            "idEmpleado": 6,
+            "apellido": "Gustavo",
+            "nombre": "Gimenez",
+            "dni": "12.182.942",
+            "cuil": "20-39218865-3",
+            "numeroAfiliado": "12345",
+            "obraSocial": {
+              "idObraSocial": 1,
+              "nombre": "OSDE"
+            },
+            "domicilio": {
+              "idDomicilio": 5,
+              "calle": "Calle San Martín",
+              "numero": 1589,
+              "ciudad": "Lanus",
+              "provincia": "Buenos Aires",
+              "localidad": null
+            }
+          }
+        ],
+        "encargado": {
+          "idEmpleado": 2,
+          "apellido": "Ernesto",
+          "nombre": "Martinez",
+          "dni": "14.568.987",
+          "cuil": "20-54321-7",
+          "numeroAfiliado": "88746",
+          "obraSocial": {
+            "idObraSocial": 2,
+            "nombre": "Swiss Medical"
+          },
+          "domicilio": {
+            "idDomicilio": 2,
+            "calle": "Calle Rio Negro",
+            "numero": 3180,
+            "ciudad": "Lomas de Zamora",
+            "provincia": "Buenos Aires",
+            "localidad": null
+          }
+        }
+      }
     },
     {
       "idVenta": 4,
@@ -944,8 +1312,8 @@
         "idFormaPago": 3,
         "nombre": "Tarjeta Débito"
       },
-      "numeroTicket": "0002-000000004",
-      "total": 3000.0,
+      "numeroTicket": "0002-00000004",
+      "total": 3300.0,
       "empleadoAtencion": {
         "idEmpleado": 6,
         "apellido": "Gustavo",
@@ -962,7 +1330,8 @@
           "calle": "Calle San Martín",
           "numero": 1589,
           "ciudad": "Lanus",
-          "provincia": "Buenos Aires"
+          "provincia": "Buenos Aires",
+          "localidad": null
         }
       },
       "empleadoCaja": {
@@ -981,7 +1350,8 @@
           "calle": "Av Corrientes",
           "numero": 1120,
           "ciudad": "Belgrano",
-          "provincia": "Ciudad Autónoma de Buenos Aires"
+          "provincia": "Ciudad Autónoma de Buenos Aires",
+          "localidad": null
         }
       },
       "cliente": {
@@ -998,7 +1368,8 @@
           "calle": "Av Corrientes",
           "numero": 1120,
           "ciudad": "Belgrano",
-          "provincia": "Ciudad Autónoma de Buenos Aires"
+          "provincia": "Ciudad Autónoma de Buenos Aires",
+          "localidad": null
         }
       },
       "detalles": [
@@ -1014,7 +1385,7 @@
               "nombre": "Bayer",
               "codigo": "BAY"
             },
-            "tipo": "Perfume"
+            "tipo": "Perfumería"
           },
           "cantidad": 3,
           "subtotal": 1200.0,
@@ -1029,16 +1400,128 @@
             "codigo": "Rxn01",
             "laboratorio": {
               "idLaboratorio": 2,
-              "nombre": "Pfizer,",
+              "nombre": "Pfizer",
               "codigo": "PFZ"
             },
-            "tipo": "Perfume"
+            "tipo": "Perfumería"
           },
           "cantidad": 2,
           "subtotal": 1800.0,
           "precioUnitario": 900.0
+        },
+        {
+          "idDetalleVenta": 11,
+          "producto": {
+            "idProducto": 6,
+            "descripcion": "Aspirina",
+            "precio": 300.0,
+            "codigo": "Asp100",
+            "laboratorio": {
+              "idLaboratorio": 1,
+              "nombre": "Bayer",
+              "codigo": "BAY"
+            },
+            "tipo": "Medicamento"
+          },
+          "cantidad": 1,
+          "subtotal": 300.0,
+          "precioUnitario": 300.0
         }
-      ]
+      ],
+      "sucursal": {
+        "idSucursal": 1,
+        "nombre": "Sucursal Central",
+        "domicilio": {
+          "idDomicilio": 1,
+          "calle": "Calle 9 de Julio",
+          "numero": 2453,
+          "ciudad": "Almirante Brown",
+          "provincia": "Buenos Aires",
+          "localidad": null
+        },
+        "empleados": [
+          {
+            "idEmpleado": 1,
+            "apellido": "Maria",
+            "nombre": "Pérez",
+            "dni": "12.325.682",
+            "cuil": "20-12345-5",
+            "numeroAfiliado": "12834",
+            "obraSocial": {
+              "idObraSocial": 2,
+              "nombre": "Swiss Medical"
+            },
+            "domicilio": {
+              "idDomicilio": 2,
+              "calle": "Calle Rio Negro",
+              "numero": 3180,
+              "ciudad": "Lomas de Zamora",
+              "provincia": "Buenos Aires",
+              "localidad": null
+            }
+          },
+          {
+            "idEmpleado": 3,
+            "apellido": "Juan",
+            "nombre": "Pérez",
+            "dni": "28.345.672",
+            "cuil": "20-28345672-5",
+            "numeroAfiliado": "58716",
+            "obraSocial": {
+              "idObraSocial": 2,
+              "nombre": "Swiss Medical"
+            },
+            "domicilio": {
+              "idDomicilio": 2,
+              "calle": "Calle Rio Negro",
+              "numero": 3180,
+              "ciudad": "Lomas de Zamora",
+              "provincia": "Buenos Aires",
+              "localidad": null
+            }
+          },
+          {
+            "idEmpleado": 4,
+            "apellido": "María",
+            "nombre": "González",
+            "dni": "33.876.904",
+            "cuil": "27-33876904-3",
+            "numeroAfiliado": "48397",
+            "obraSocial": {
+              "idObraSocial": 3,
+              "nombre": "Galeno"
+            },
+            "domicilio": {
+              "idDomicilio": 3,
+              "calle": "Calle Sarmiento",
+              "numero": 2732,
+              "ciudad": "Retiro",
+              "provincia": "Ciudad Autónoma de Buenos Aires",
+              "localidad": null
+            }
+          }
+        ],
+        "encargado": {
+          "idEmpleado": 1,
+          "apellido": "Maria",
+          "nombre": "Pérez",
+          "dni": "12.325.682",
+          "cuil": "20-12345-5",
+          "numeroAfiliado": "12834",
+          "obraSocial": {
+            "idObraSocial": 2,
+            "nombre": "Swiss Medical"
+          },
+          "domicilio": {
+            "idDomicilio": 2,
+            "calle": "Calle Rio Negro",
+            "numero": 3180,
+            "ciudad": "Lomas de Zamora",
+            "provincia": "Buenos Aires",
+            "localidad": null
+          }
+        }
+      }
     }
   ]
 }
