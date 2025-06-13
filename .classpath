@@ -8,9 +8,10 @@
 	<classpathentry excluding="test/|resources/" kind="src" path="src"/>
 	<classpathentry kind="src" path="src/test"/>
 	<classpathentry kind="lib" path="lib/gson-2.10.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/rprui/Desktop/BD2/BBDD2 - Entrega/BBDD2 - Entrega/lib/slf4j-nop-2.0.9.jar"/>
 	<classpathentry kind="lib" path="C:/Users/rprui/Desktop/BD2/BBDD2 - Entrega/BBDD2 - Entrega/lib/bson-4.9.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/rprui/Desktop/BD2/BBDD2 - Entrega/BBDD2 - Entrega/lib/mongodb-driver-core-4.9.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/rprui/Desktop/BD2/BBDD2 - Entrega/BBDD2 - Entrega/lib/mongodb-driver-sync-4.9.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rprui/Downloads/slf4j-api-2.0.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rprui/Downloads/slf4j-nop-2.0.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
