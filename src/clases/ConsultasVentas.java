@@ -214,21 +214,25 @@ public class ConsultasVentas {
                 sum("cantidadVentas", 1),
                 sum("totalVentas", "$detalles.subtotal"), 
                 push("idsVentas", "$idVenta"),
-                addToSet("productosIds", "$detalles.producto.idProducto") // Agrega los IDs de productos únicos por tipo
+                addToSet("productosIds", "$detalles.producto.idProducto")
             ),
             sort(Sorts.descending("totalVentas"))
         ));
 
         System.out.println("\nVentas por Tipo de Producto:");
-        System.out.println("Tipo Producto\tCantidad\tTotal\t\tIDs Ventas\t\tIDs Productos"); 
+        System.out.println("Tipo Producto\t\tCantidad\tTotal\t\tIDs Ventas\t\tIDs Productos"); 
         System.out.println("----------------------------------------------------------------------------------"); 
         for (Document doc : resultado) {
-            System.out.printf("%s\t%d\t\t$%.2f\t%s\t%s\n",
-                doc.getString("_id.tipoProducto"),
+            // Obtener el documento _id que contiene el tipoProducto
+            Document tipoInfo = doc.get("_id", Document.class);
+            String tipoProducto = tipoInfo.getString("tipoProducto");
+            
+            System.out.printf("%-15s\t%-8d\t$%-10.2f\t%-20s\t%s\n",
+                tipoProducto,
                 doc.getInteger("cantidadVentas"),
                 doc.getDouble("totalVentas"),
                 doc.getList("idsVentas", Integer.class).toString(),
-                doc.getList("productosIds", Integer.class).toString()); // Imprime la nueva columna con IDs de productos
+                doc.getList("productosIds", Integer.class).toString());
         }
     }
 
@@ -257,13 +261,14 @@ public class ConsultasVentas {
         ));
 
         System.out.println("\nTop 10 productos por monto vendido:");
-        System.out.println("Producto (ID)\t\tSucursal\tMonto\t\tCantidad\tIDs Ventas");
-        System.out.println("----------------------------------------------------------------------------");
+        System.out.println("Producto (ID)\t\t\tSucursal\t\tMonto\t\tCantidad\tIDs Ventas");
+        System.out.println("--------------------------------------------------------------------------------");
         for (Document doc : resultado) {
-            System.out.printf("%s (%d)\t%s\t$%.2f\t%d\t\t%s\n",
-                doc.getString("_id.producto"),
-                doc.getInteger("_id.idProducto"),
-                doc.getString("_id.sucursal"),
+            Document idInfo = doc.get("_id", Document.class);
+            System.out.printf("%-20s (%-5d)\t%-15s\t$%-10.2f\t%-8d\t%s\n",
+                idInfo.getString("producto"),
+                idInfo.getInteger("idProducto"),
+                idInfo.getString("sucursal"),
                 doc.getDouble("montoVendido"),
                 doc.getInteger("cantidadVendida"),
                 doc.getList("idsVentas", Integer.class).toString());
@@ -295,9 +300,10 @@ public class ConsultasVentas {
         System.out.println("Producto (ID)\t\tCantidad\tMonto\t\tIDs Ventas");
         System.out.println("------------------------------------------------------------");
         for (Document doc : resultado) {
+            Document idProducto = doc.get("_id", Document.class);
             System.out.printf("%s (%d)\t%d\t$%.2f\t%s\n",
-                doc.getString("_id.producto"),
-                doc.getInteger("_id.idProducto"),
+                idProducto.getString("producto"),  // Cambiado de %d a %s para el nombre
+                idProducto.getInteger("idProducto"),
                 doc.getInteger("cantidadVendida"),
                 doc.getDouble("montoVendido"),
                 doc.getList("idsVentas", Integer.class).toString());
@@ -328,9 +334,10 @@ public class ConsultasVentas {
         System.out.println("Cliente (ID)\t\tCompras\tMonto Total\tIDs Ventas");
         System.out.println("--------------------------------------------------------");
         for (Document doc : resultado) {
+            Document idCliente = doc.get("_id", Document.class);
             System.out.printf("%s (%d)\t%d\t$%.2f\t%s\n",
-                doc.getString("_id.cliente"),
-                doc.getInteger("_id.idCliente"),
+                idCliente.getString("cliente"),
+                idCliente.getInteger("idCliente"),
                 doc.getInteger("cantidadCompras"),
                 doc.getDouble("montoTotal"),
                 doc.getList("idsVentas", Integer.class).toString());
